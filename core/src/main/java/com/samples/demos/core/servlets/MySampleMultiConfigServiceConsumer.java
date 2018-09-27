@@ -60,8 +60,8 @@ public class MySampleMultiConfigServiceConsumer extends SlingSafeMethodsServlet 
 	 * @param config
 	 *            New configuration for factory
 	 */
-	@Reference(name = "configurationFactory", cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC)
-	protected synchronized void bindConfigurationFactory(final MyTestSampleMultiConfigService config) {
+	@Reference(name = "myTestSampleMultiConfigService", cardinality = ReferenceCardinality.MULTIPLE, policy = ReferencePolicy.DYNAMIC)
+	protected synchronized void bindMyTestSampleMultiConfigService(final MyTestSampleMultiConfigService config) {
 		LOGGER.info("[Raghava]--> bindConfigurationFactory: " + config.getMemberName());
 		if (configurationList == null) {
 			configurationList = new ArrayList<MyTestSampleMultiConfigService>();
@@ -75,7 +75,7 @@ public class MySampleMultiConfigServiceConsumer extends SlingSafeMethodsServlet 
 	 * @param config
 	 *            New configuration for factory
 	 */
-	protected synchronized void unbindConfigurationFactory(final MyTestSampleMultiConfigService config) {
+	protected synchronized void unbindMyTestSampleMultiConfigService(final MyTestSampleMultiConfigService config) {
 		LOGGER.info("unbindConfigurationFactory: " + config.getMemberName());
 		configurationList.remove(config);
 	}
