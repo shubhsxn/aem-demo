@@ -56,9 +56,3 @@ There are three levels of testing contained in the project:
 The project comes with the auto-public repository configured. To setup the repository in your Maven settings, refer to:
 
     http://helpx.adobe.com/experience-manager/kb/SetUpTheAdobeMavenRepository.html
-"# aem-demo" 
-
-## By Raghava J
-
-Created using command, 
-mvn archetype:generate -DarchetypeGroupId=com.adobe.granite.archetypes -DarchetypeArtifactId=aem-project-archetype -DarchetypeVersion=13 -DarchetypeRepository=https://repo.adobe.com/nexus/content/groups/public/
