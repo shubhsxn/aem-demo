@@ -83,9 +83,13 @@ public class MySampleMultiConfigServiceConsumer extends SlingSafeMethodsServlet 
 	@Override
 	protected void doGet(final SlingHttpServletRequest req, final SlingHttpServletResponse resp)
 			throws ServletException, IOException {
-
+		if(configurationList != null) {
+		resp.getWriter().println("Total Items = " + configurationList.size());
 		for (MyTestSampleMultiConfigService myTestSampleMultiConfigService : configurationList) {
-			resp.getWriter().println("Name = " + myTestSampleMultiConfigService.getMemberName());
+			resp.getWriter().println("Name = " + myTestSampleMultiConfigService.getMemberName()+" " +"place = " + myTestSampleMultiConfigService.getMemberPlace()+" " +"PIN = " + myTestSampleMultiConfigService.getMemberPIN());
+		}
+		} else {
+			resp.getWriter().println("Zero Items");
 		}
 	}
 }
